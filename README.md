@@ -14,7 +14,13 @@ The API information and descriptions are taken from the very excellent Max resou
 
 http://max-javascript-reference.tim-schenk.de/#gsc.tab=0
 
-As of the initial release these are far, far from complete. I started this as a way to learn the JSUI and Mgraphics APIs so that's what I've initially concentrated on. I'll likely expand it, eventually and gradually, to encompoass the 'Max' API and 'Max For Live' API:
+As of the initial release these are far, far from complete. I started this as a way to learn the JSUI and Mgraphics APIs so that's what I've initially concentrated on:
+
+http://max-javascript-reference.tim-schenk.de/symbols/jsui.html
+
+http://max-javascript-reference.tim-schenk.de/symbols/MGraphics.html
+
+I'll likely expand it, eventually and gradually, to encompoass the 'Max' API and 'Max For Live' API:
 
 http://max-javascript-reference.tim-schenk.de/symbols/max.html
 
