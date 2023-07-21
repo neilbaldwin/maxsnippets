@@ -1,7 +1,6 @@
 # maxsnippets
-VSCode Snippets for Cycling 74's Max visual programming language
 
-Some Snippets for VSCode that provide a basic (and 'fake') code completion for Javascript in Max.
+Some Snippets for VSCode that provide a basic (and 'fake') code completion for Javascript in Max. Very much WIP!
 
 ### Installation
 
