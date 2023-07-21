@@ -5,7 +5,9 @@ Some Snippets for VSCode that provide a basic (and 'fake') code completion for J
 
 ### Installation
 
-As the APIs are Javascript-based, the Snippets need to either replace any existing Javascript Snippets you have created/installed or you could also edit your existing Javascript Snippet file then copy-and-paste the contents of the .snippet file here in the 'maxsnippets' folder.
+As the APIs are Javascript-based, the Snippets need to either replace any existing Javascript Snippets you have created/installed or alternatively you could edit your existing Javascript Snippet file then copy-and-paste the contents of the "javascript.json" file here in the 'maxsnippets' folder. Note: I obviously can't know if any of the Snippet IDs or Prefixes will conflict with any of your existing Snippets.
+
+To edit/create a Snippet file for Javascript, in VSCode go to Preferences->Configure User Snippets and then select "javascript.json".
 
 ### Details
 
@@ -26,3 +28,8 @@ It's a terrible fudge as I don't have the time or inclination to get involved in
 ### Contribution
 
 Contributions, feedback and suggestions are VERY welcome!
+
+### Warranty
+
+None. Nope. Use at your own risk as I can't promise it won't break anything in the case that you have existing Snippet files in use. It also won't teach you how to code Max but it might help with remembering many of the API commands/functions!
+
