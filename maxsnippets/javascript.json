@@ -1,0 +1,635 @@
+{
+	//
+	// JSUI
+	//
+
+	"JSUI Refresh": {
+		"prefix": ["jsui.refresh","refresh"],
+		"body": [
+			"refresh();","${0}"
+		],
+		"description": "(void) Copies contents of sketch to screen."
+	},
+
+	"JSUI: onclick": {
+		"prefix": ["click","onclick","jsui.onclick"],
+		"body": [
+			"function onclick(x, y, button, cmd, shift, capslock, option, ctrl) {","\t${1}","}","${0}"
+		],
+		"description": "(void) If defined, will receive all click events."
+	},
+
+	"JSUI ondblclick": {
+		"prefix": ["double","ondblclick","jsui.ondblclick"],
+		"body": [
+			"function ondblclick(x, y, button, cmd, shift, capslock, option, ctrl) {","\t${1}","}","${0}"
+		],
+		"description": "(void) If defined, will receive all double click events."
+	},
+
+	"JSUI ondrag": {
+		"prefix": ["drag","ondrag","jsui.ondrag"],
+		"body": [
+			"function ondrag(x, y, button, cmd, shift, capslock, option, ctrl) {","\t${1}","}","${0}"
+		],
+		"description": "(void) If defined, will receive all dragging events."
+	},
+
+	"JSUI onidle": {
+		"prefix": ["idle","onidle","jsui.onidle"],
+		"body": [
+			"function onidle(x, y, button, cmd, shift, capslock, option, ctrl) {","\t${1}","}","${0}"
+		],
+		"description": "(void) If defined, will receive all idle mouse events while the mouse is over the rectangle occupied by jsui object."
+	},
+
+	"JSUI onidleout": {
+		"prefix": ["idleout","onidleout","jsui.onidleout"],
+		"body": [
+			"function onidleout(x, y, button, cmd, shift, capslock, option, ctrl) {","\t${1}","}","${0}"
+		],
+		"description": "(void) If defined, will receive the first idle mouse event as the mouse leaves the rectangle occupied by the jsui object."
+	},
+
+	"JSUI onresize": {
+		"prefix": ["resize","onresize","jsui.onresize"],
+		"body": [
+			"function onresize(width, height) {","\t${1}","}","${0}"
+		],
+		"description": "(void) If defined, will receive any resize events with the new width and height."
+	},
+
+	//
+	// MGRAPHICS
+	//
+	"MGRAPHICS setup": {
+		"prefix": ["jsui.mgraphics","setup","mgraphics.setup"],
+		"body": [
+			"mgraphics.init();",
+			"mgraphics.relative_coords = ${1:1};",
+			"mgraphics.autofill = ${2:0};",
+			"${0}"
+		],
+		"description": "Required code to use MGRAPHICS system."
+	},
+
+	"Mgraphics Init": {
+		"prefix": ["init","mgraphics.init"],
+		"body": [
+			"mgraphics.init();","${0}"
+		],
+		"description": "(void) Required function to use MGraphics in jsui. See Snippet 'setup'."
+	},
+
+	"Mgraphics Autofill": {
+		"prefix": ["autofill","mgraphics.autofill"],
+		"body": [
+			"mgraphics.autofill = ${1:0};","${0}"
+		],
+		"description": "Sets autofill mode for mgraphics system."
+	},
+	
+	"Mgraphics Autosketch": {
+		"prefix": ["autosketch","mgraphics.autosketch"],
+		"body": [
+			"mgraphics.autosketch = ${1:0};","${0}"
+		],
+		"description": "When autosketch is set to “1”, the drawing commands will immediately be drawn without waiting a drawing execution command."
+	},
+
+	
+	"Mgraphics Autopaint": {
+		"prefix": ["autopaint","mgraphics.autopaint"],
+		"body": [
+			"mgraphics.autopaint = ${1:0};","${0}"
+		],
+		"description": "Sets autopaint mode."
+	},
+
+	///
+
+	"Mgrahics Append Path": {
+		"prefix": ["path","append_path","mgraphics.append_path"],
+		"body": [
+			"mgraphics.append_path(${1:PATH});","${0}"
+		],
+		"description": "(void) Appends a stored path to the current path at the current end point. "
+	},
+
+	"Mgraphics Arc": {
+		"prefix": ["arc","mgraphics.arc"],
+		"body": [
+			"mgraphics.arc(${1:x_coord}, ${2:y_coord}, ${3:radius}, ${4:start_angle}, ${5:end_angle});","${0}"
+		],
+		"description": "(void) Add a circular, clockwise, arc to the current path. Angles are in radians."
+	},
+
+	"Mgraphics Negative Arc": {
+		"prefix": ["arc_neg","arc_negative","mgraphics.arc_neg","mgraphics.arc_negative`"],
+		"body": [
+			"mgraphics.arc_negative(${1:x_coord}, ${2:y_coord}, ${3:radius}, ${4:start_angle}, ${5:end_angle});","${0}"
+		],
+		"description": "(void) Add a circular, anti-clockwise, arc to the current path. Angles are in radians."
+	},
+
+	"Mgraphics Close Path": {
+		"prefix": ["close","close_path","mgraphics.close","mgraphics.close_path"],
+		"body": [
+			"mgraphics.close_path();","${0}"
+		],
+		"description": "(void) Create a line that connects the current path point to the origin of the path, thereby closing the path into a fill-able shape. "
+	},
+
+	"Mgraphics Copy Path": {
+		"prefix": ["copy","copy_path","mgraphics.copy","mgraphics.copy_path"],
+		"body": [
+			"mgraphics.copy_path();","${0}"
+		],
+		"description": "(Array) Returns a copy of the current path to be stored and reused at a later time. "
+	},
+
+	"Mgraphics Curve To": {
+		"prefix": ["curve","curve_to","mgraphics.curve","mgraphics.curve_to"],
+		"body": [
+			"mgraphics.curve_to(${1:X1}, ${2:Y1}, ${3:X2}, ${4:Y2}, ${5:X3}, ${6:Y3});","${0}"
+		],
+		"description": "Add a cubic Bezier spline to the current path. "
+	},
+
+	"Mgraphics Device To User": {
+		"prefix": ["device","device_to_user","mgraphics.device","mgraphics.device_to_user"],
+		"body": [
+			"mgraphics.device_to_user(${1:POSITION});","${0}"
+		],
+		"description": "(void) Given a device position, returns the user space location. This will determine a location despite user space deformation (using matrix transforms). "
+	},
+
+	"Mgraphics Elipse": {
+		"prefix": ["elipse","mgraphics.elipse"],
+		"body": [
+			"mgraphics.elipse(${1:X},${2:Y},${3:WIDTH},${4:HEIGHT});","${0}"
+		],
+		"description": "(void) Add a closed elliptical path in the context. "
+	},
+
+	"Mgraphics Fill": {
+		"prefix": ["fill","mgraphics.fill"],
+		"body": [
+			"mgraphics.fill();","${0}"
+		],
+		"description": "(void) Fill the path with the current source color. When the fill is completed, the path will be destroyed. "
+	},
+
+	"Mgraphics Fill Extend": {
+		"prefix": ["fill_extend","extend","mgraphics.fill_extend"],
+		"body": [
+			"mgraphics.fill_extend();","${0}"
+		],
+		"description": "(Array) Determine the enclosing rectangle for the current fill area. Returns an array that contains the top/left and bottom/right points of the fill area. "
+	},
+
+	"Mgraphics Fill Preserve": {
+		"prefix": ["fill_preserve","preserve","mgraphics.fill_preserve"],
+		"body": [
+			"mgraphics.fill_preserve();","${0}"
+		],
+		"description": "(void)  Fill the path with the current source color, but do not destroy the path when the fill is completed. "
+	},
+
+	"Mgraphics Fill with Alpha": {
+		"prefix": ["fill_alpha","fill_with_alpha","mgraphics.fill_alpha","mgraphics.fill_with_alpha"],
+		"body": [
+			"mgraphics.fill_with_alpha(${1:ALPHA});","${0}"
+		],
+		"description": "(void) Fill the path with the current source color, but override the alpha value for a fill-specific transparency."
+	},
+
+	"Mgraphics Font Extends": {
+		"prefix": ["font_ext","font_extends","mgraphics.font_ext","mgraphics.font_extends"],
+		"body": [
+			"mgraphics.font_extends();","${0}"
+		],
+		"description": "(Array) Returns an array with three values: ascent, descent and height."
+	},
+
+	"Mgraphics Get Current Point": {
+		"prefix": ["get_point","get_current_point","mgraphics.get_point","mgraphics.get_current_point"],
+		"body": [
+			"mgraphics.get_current_point();","${0}"
+		],
+		"description": "(Array) Returns an array with the current X and Y coordinates of the path ending position."
+	},
+
+	"Mgraphics Get Line Cap": {
+		"prefix": ["get_cap","get_line_cap","mgraphics.get_cap","mgraphics.get_line_cap"],
+		"body": [
+			"mgraphics.get_line_cap();","${0}"
+		],
+		"description": "(String)Retrieve the appearance attribute of the current line_cap setting. The returned value is the same as the values used by set_line_cap: butt, round or square."
+	},
+
+	"Mgraphics Get Line Join": {
+		"prefix": ["get_join","get_line_join","mgraphics.get_join","mgraphics.get_line_join"],
+		"body": [
+			"mgraphics.get_line_join();","${0}"
+		],
+		"description": "(String)Retrieve the appearance attribute of the current line_join setting. The returned value is the same as the values used by set_line_join: miter, round or bevel."
+	},
+
+	"Mgraphics Get Line Width": {
+		"prefix": ["get_width","get_line_width","mgraphics.get_width","mgraphics.get_line_width"],
+		"body": [
+			"mgraphics.get_line_width();","${0}"
+		],
+		"description": "(Float) Retrieve the current line width as a floating-point number. "
+	},
+
+	"Mgraphics Get Matrix": {
+		"prefix": ["get_matrix","mgraphics.get_matrix"],
+		"body": [
+			"mgraphics.get_matrix();","${0}"
+		],
+		"description": "(Array) Retrieve the current transform matrix for the current drawing context. "
+	},
+
+	"Mgraphics Get Font List": {
+		"prefix": ["get_font","get_font_list","mgraphics.get_font","mgraphics.get_font_list"],
+		"body": [
+			"mgraphics.get_font_list();","${0}"
+		],
+		"description": "(Array) Returns a Javascript array where each value is the text name of a font installed on your system. You can determine the length of the array by using the variable fontlist.length. "
+	},
+
+	"Mgraphics Identity Matrix": {
+		"prefix": ["identity","identity_matrix","mgraphics.identity","mgraphics.identity_matrix"],
+		"body": [
+			"mgraphics.identity_matrix();","${0}"
+		],
+		"description": "(void) Revert the transform matrix to default (normal) values. )"
+	},
+
+	"Mgraphics Image Surface Draw": {
+		"prefix": ["imgage_draw","image_surface","image_surface_draw","mgraphics.image_surface","mgraphics.image_draw"],
+		"body": [
+			"mgraphics.image_surface_draw(${1:myImage}, ${2:source_top}, ${3:source_left}, ${4:source_width}, ${5:source_height});","${0}"
+		],
+		"description": "(void)Place an image (typically stored as an Image object) into the current surface. The drawing is placed at the top-left of the drawing context, changeable using a transform matrix or translate function. You can also choose the section of the image to draw using four optional arguments that describe a rectangle taken from the image. "
+	},
+
+	"Mgraphics In Fill?": {
+		"prefix": ["infill","in_fill","mgraphics.infill","mgraphics.in_fill"],
+		"body": [
+			"mgraphics.in_fill();","${0}"
+		],
+		"description": "(Boolean) Given a fillable path, determine if a point is within the fill zone. Returns 0 (false) or 1 (true). "
+	},
+
+	"Mgraphics Line To": {
+		"prefix": ["line_to","lineto","mgraphics.line_to","mgraphics.lineto"],
+		"body": [
+			"mgraphics.line_to(${1:X}, ${2:Y});","${0}"
+		],
+		"description": "(void) Add a line segment to the current path. "
+	},
+
+	"Mgraphics Move To": {
+		"prefix": ["move_to","moveto","mgraphics.move_to","mgraphics.moveto"],
+		"body": [
+			"mgraphics.move_to(${1:X}, ${2:Y});","${0}"
+		],
+		"description": "(void) Move the cursor to a new point and begin a new subpath. "
+	},
+
+	"Mgraphics Oval Arc": {
+		"prefix": ["oval","oval_arc","mgraphics.oval","mgraphics.oval_arc"],
+		"body": [
+			"mgraphics.oval_arc(${1:x_coord}, ${2:y_coord}, ${3:radiusX}, ${4:radiuY}, ${5:start_angle}, ${6:end_angle});","${0}"
+		],
+		"description": "(void)  Add a circular, counter-clockwise, arc to the current path. Angles are in radians, zero is center-right, positive X"
+	},
+
+	"Mgraphics Path Round Corners": {
+		"prefix": ["round","round_corners","roundcorners","path_roundcorners","mgraphics.round","mgraphics.roundcorners","mgraphics.path_roundcorners"],
+		"body": [
+			"mgraphics.path_roundcorners(${1:RADIUS});","${0}"
+		],
+		"description": "(void) Using the current path, round the corners to the radius provided (or as close as possible given the path’s angle).  "
+	},
+
+
+	"Mgraphics Pattern Create For Surface": {
+		"prefix": ["surface","pattern_surface","mgraphics.pattern_surface","mgraphics.pattern_create_for_surface"],
+		"body": [
+			"mgraphics.pattern_create_for_surface(${1:IMAGE});","${0}"
+		],
+		"description": "(Pattern) Create a pattern using an image for the background. Repeating patterns depends on the extend value set using the set_extend() function. This routine returns a pattern object value that is used by other functions. "
+	},
+
+	"Mgraphics Pattern Create Linear": {
+		"prefix": ["linear","pattern_linear","mgraphics.pattern_linear","mgraphics.pattern_create_linear"],
+		"body": [
+			"mgraphics.pattern_create_linear(${1:X1}, ${2:Y1}, ${3:X2}, ${4:Y2});","${0}"
+		],
+		"description": "(Pattern) Create a linear gradient, with an influence point for each gradient section. When in relative_coordinate mode, these influence points still need to be defined in pixels rather than relative coordinates. This routine returns a pattern object value that is used by other functions. "
+	},
+
+	"Mgraphics Pattern Create Radial": {
+		"prefix": ["radial","pattern_radial","mgraphics.pattern_radial","mgraphics.pattern_create_radial"],
+		"body": [
+			"mgraphics.pattern_create_radial(${1:X1}, ${2:Y1}, ${3:radius1}, ${4:X2}, ${5:Y2}, ${6:radius2});","${0}"
+		],
+		"description": "(Pattern) Create a radial gradient, with an influence point for each gradient section. When in relative_coordinate mode, these influence points still need to be defined in pixels rather than relative coordinates. This routine returns a pattern object value that is used by other functions."
+	},
+
+	"Mgraphics Pattern Create RGBA": {
+		"prefix": ["rgba","pattern_rgba","mgraphics.pattern_rgba","mgraphics.pattern_create_rgba"],
+		"body": [
+			"mgraphics.pattern_create_rgba(${1:RED}, ${2:GREEN}, ${3:BLUE}, ${4:ALPHA});","${0}"
+		],
+		"description": "(Pattern) Create a solid color pattern. This routine returns a pattern object value that is used by other functions. "
+	},
+
+	"Mgraphics Pop Group": {
+		"prefix": ["pop","pop_group","mgraphics.pop","mgraphics.pop_group"],
+		"body": [
+			"mgraphics.pop_group();"
+		],
+		"description": "(Image) Complete a path execution group, returning the results as an Image object. This image can be used for later drawing of the group results. "
+	},
+
+	"Mgraphics Push Group": {
+		"prefix": ["push","push_group","mgraphics.push","mgraphics.push_group"],
+		"body": [
+			"mgraphics.push_group();"
+		],
+		"description": "(Image) Define a starting point for a path execution group. This group can be used for creating an image from a set of path functions without actually drawing the results to the screen."
+	},
+
+	"Mgraphics Rectangle": {
+		"prefix": ["rectangle","mgraphics.rectangle"],
+		"body": [
+			"mgraphics.rectangle(${1:X}, ${2:Y}, ${3:WIDTH}, ${4:HEIGHT});","${0}"
+		],
+		"description": "(void) Add a closed rectangle path in the context. "
+	},
+
+	"Mgraphics Rounded Rectangle": {
+		"prefix": ["rectangle","rounded","rounded_rectangle","rectangle_rounded","mgraphics.rounded","mgraphic.rectangle_rounded"],
+		"body": [
+			"mgraphics.rectangle_rounded(${1:X}, ${2:Y}, ${3:WIDTH}, ${4:HEIGHT}, ${5:OVAL_WIDTH}, ${6:OVAL_HEIGHT});","${0}"
+		],
+		"description": "(void) Add a closed rounded-rectangle path in the context.  "
+	},
+
+	"Mgraphics Redraw": {
+		"prefix": ["redraw","mgraphics.redraw"],
+		"body": [
+			"mgraphics.redraw();"
+		],
+		"description": "(void) Force a redraw of the display area by calling the paint() function. "
+	},
+
+	"Mgraphics Relative Curve To": {
+		"prefix": ["curve","curve_to","rel","relative","relative_curve","rel_curve","mgraphics.rel","mgraphics.rel_curve"],
+		"body": [
+			"mgraphics.rel_curve_to(${1:X1}, ${2:Y2}, ${3:X2}, ${4:Y2}, ${5:DEST_X}, ${6:DEST_Y});","${0}"
+		],
+		"description": "(void) Add a cubic Bezier spline to the current path, using coordinates relative to the current point. "
+	},
+
+	"Mgraphics Relative Line To": {
+		"prefix": ["line","line_to","rel","relative","relative_line","rel_line","mgraphics.rel","mgraphics.rel_line"],
+		"body": [
+			"mgraphics.rel_line_to(${1:X1}, ${2:Y2});","${0}"
+		],
+		"description": "(void) Add a line segment to the current path, using coordinates relative to the current point."
+	},
+
+	"Mgraphics Relative Move To": {
+		"prefix": ["move","move_to","rel","relative","relative_move","rel_move","mgraphics.rel","mgraphics.rel_move"],
+		"body": [
+			"mgraphics.rel_move_to(${1:X1}, ${2:Y2});","${0}"
+		],
+		"description": "(void) Move the cursor to a new point and begin a new subpath, using coordinates relative to the current point. "
+	},
+
+	"Mgraphics Restore": {
+		"prefix": ["restore","mgraphics.restore"],
+		"body": [
+			"mgraphics.restore();","${0}"
+		],
+		"description": "(void) Restore the Mgraphics system to a previously saved state. "
+	},
+
+	"Mgraphics Save": {
+		"prefix": ["save","mgraphics.save"],
+		"body": [
+			"mgraphics.save();","${0}"
+		],
+		"description": "(void) Save the current Mgraphics state for later restoration. This is particularly useful when doing multiple transformations or matrix manipulation of the user space. "
+	},
+
+	"Mgraphics Scale": {
+		"prefix": ["scale","mgraphics.scale"],
+		"body": [
+			"mgraphics.scale(${1:SCALE_X}, ${2:SCALE_Y});","${0}"
+		],
+		"description": "(void) Modifies the transform matrix that scales all X and Y values by the values provided. Note: This affects everything from size to location, and also scales line widths."
+	},
+
+	"Mgraphics Scale Source RGBA": {
+		"prefix": ["scale","rgba","scale_source","mgraphics.scale_source","mgraphics.scale_rgba"],
+		"body": [
+			"mgraphics.scale_source_rgba(${1:SRC_RED}, ${2:SRC_GREEN}, ${3:SRC_BLUE}, ${4:SRC_ALPHA});","${0}"
+		],
+		"description": "(void)Create a transform for the color and alpha channels using scale amounts to determine a color multiplier (either positive or negative). Note: One of the set_source_* routines must be called to apply this transform to an actual color. "
+	},
+
+	"Mgraphics Select Font Face": {
+		"prefix": ["font","face","font_face","mgraphics.font","mgraphics.font_face","mgraphics.select_font_face"],
+		"body": [
+			"mgraphics.select_font_face(${1:FONT_NAME});","${0}"
+		],
+		"description": "(void) Sets the current font face by name. "
+	},
+
+	"Mgraphics Set Font Size": {
+		"prefix": ["font","size","font_size","mgraphics.font","mgraphics.font_size","mgraphics.set_font_size"],
+		"body": [
+			"mgraphics.set_font_size(${1:FONT_SIZE});","${0}"
+		],
+		"description": "(void) Sets the current font size using an integer or floating-point value."
+	},
+
+	"Mgraphics Set Line Cap": {
+		"prefix": ["set_cap","set_line_cap","mgraphics.set_cap","mgraphics.set_line_cap"],
+		"body": [
+			"mgraphics.set_line_cap(${1|butt,round,square|});","${0}"
+		],
+		"description": "(String)Set the appearance attribute of the current line_cap setting: butt, round or square."
+	},
+
+	"Mgraphics Set Line Join": {
+		"prefix": ["set_join","set_line_join","mgraphics.set_join","mgraphics.set_line_join"],
+		"body": [
+			"mgraphics.set_line_join(${1|miter,round,bevel|});","${0}"
+		],
+		"description": "(String) Set the appearance attribute of the current line_join setting: miter, round or bevel."
+	},
+
+	"Mgraphics Set Line Width": {
+		"prefix": ["set_width","set_line_width","mgraphics.set_width","mgraphics.set_line_width"],
+		"body": [
+			"mgraphics.set_line_width(${1:WIDTH});","${0}"
+		],
+		"description": "(Float) Set the current line width as a floating-point number. "
+	},
+
+
+	"Mgraphics Set Matrix": {
+		"prefix": ["matrix","set_matrix","mgraphics.matrix","mgraphics.set_matrix"],
+		"body": [
+			"mgraphics.set_matrix(${1:XX}, ${2:XY}, ${3:YX}, ${4:YY}, ${5:X0}, ${6:Y0});","${0}"
+		],
+		"description": "(void) Directly set the tranform matrix for the current drawing context."
+	},
+
+	"Mgraphics Set Source": {
+		"prefix": ["source","set_source","mgraphics.source","mgraphics.set_source"],
+		"body": [
+			"mgraphics.set_source(${1:PATTERN});","${0}"
+		],
+		"description": "(void) Sets the pattern to be used for the next fill() call. The name parameter must be a previously created pattern. "
+	},
+
+	"Mgraphics Set Source RGB": {
+		"prefix": ["rgb","source_rgb","set_rgb","mgraphics.source_rgb","mgraphics.set_source_rgb"],
+		"body": [
+			"mgraphics.set_source_rgb(${1:RED}, ${2:GREEN}, ${3:BLUE});","${0}"
+		],
+		"description": "(void) Set the color channels to be used for drawing routines. Since the alpha channel is not provide, it is defaulted to completely opaque. "
+	},
+
+	"Mgraphics Set Source RGBA": {
+		"prefix": ["rgba","source_rgba","set_rgba","mgraphics.source_rgba","mgraphics.set_source_rgba"],
+		"body": [
+			"mgraphics.set_source_rgba(${1:RED}, ${2:GREEN}, ${3:BLUE}, ${4:ALPHA});","${0}"
+		],
+		"description": "(void) Set the color channels to be used for drawing routines."
+	},
+
+	"Mgraphics Set Source Surface": {
+		"prefix": ["surface","source_surface","set_surface","mgraphics.source_surface","mgraphics.set_source_surface"],
+		"body": [
+			"mgraphics.set_source_surface(${1:SURFACE});","${0}"
+		],
+		"description": "(void) Sets the provided surface as the source for drawing routines."
+	},
+
+	"Mgraphics Show Text": {
+		"prefix": ["text","show_text","mgraphics_text","mgraphics_show_text"],
+		"body": [
+			"mgraphics.show_text(${1:STRING});","${0}"
+		],
+		"description": "(void)Places the display text in the drawing area at the current location, and using the current font and size. Since a path is not being created, it does not conform to the transformations otherwise available with paths. "
+	},
+
+	"Mgraphics Stroke": {
+		"prefix": ["stroke","mgraphics.stroke"],
+		"body": [
+			"mgraphics.stroke();","${0}"
+		],
+		"description": "(void) Draw the outline of the path with the color and line size chosen. When the drawing is complete, the path is deleted. "
+	},
+
+	"Mgraphics Stroke Preserve": {
+		"prefix": ["stroke","preserve","stroke_preserve","mgraphics.stroke","mgraphics.stroke_preserve"],
+		"body": [
+			"mgraphics.stroke_preserve();","${0}"
+		],
+		"description": "(void) Draw the outline of the path with the color and line size chosen, but do not destroy the path when completed. This is useful for situations where you need to both fill a path and draw its outline. "
+	},
+
+	"Mgraphics Stroke Preserve Alpha": {
+		"prefix": ["stroke","preserve","alpha","stroke_preserve","stroke_preserve_alpha","mgraphics.stroke_preserve_alpha"],
+		"body": [
+			"mgraphics.stroke_preserve_alpha(${1:ALPHA});","${0}"
+		],
+		"description": "(void) This will draw the line, preserve the path, and override the alpha value in a single routine call. "
+	},
+
+	"Mgraphics Stroke With Alpha": {
+		"prefix": ["stroke","alpha","stroke_with_alpha","mgraphics.stroke_with_alpha"],
+		"body": [
+			"mgraphics.stroke_with_alpha(${1:ALPHA});","${0}"
+		],
+		"description": "(void) Draw the outline of the path with the color and line size chosen, but override the alpha value of the color with a new alpha channel value. This allows you to change transparency without resetting the color values. "
+	},
+
+	"Mgraphics SVG Render": {
+		"prefix": ["svg","render","svg_render","mgraphics.svg","mgraphics.render","mgraphics.svg_gender"],
+		"body": [
+			"mgraphics.svg_render(${1:FILENAME});","${0}"
+		],
+		"description": "(void) Render an SVG file into the current user context. "
+	},
+
+	"Mgraphics Text Measure": {
+		"prefix": ["text","measure","text_measure","mgraphics.text_measure"],
+		"body": [
+			"mgraphics.text_measure();","${0}"
+		],
+		"description": "(Array) Returns an array with two values: width and height. This is the measurement of the provided text using the current font and size. "
+	},
+
+	"Mgraphics Text Path": {
+		"prefix": ["text","path","text_path","mgraphics.text_path"],
+		"body": [
+			"mgraphics.text_path(${1:STRING});","${0}"
+		],
+		"description": "(void) Create a path that uses the display text, the current font and the current size. The result is subject to all of the transforms ordinarily available to paths. "
+	},
+
+	"Mgraphics Transform": {
+		"prefix": ["matrix","transform","mgraphics.transform"],
+		"body": [
+			"mgraphics.transform(${1:XX}, ${2:XY}, ${3:YX}, ${4:YY}, ${5:X0}, ${6:Y0});","${0}"
+		],
+		"description": "(void) Directly modify the transform matrix (and therefore the user space) using six values. The xx and yy values provide scaling support, xy and yx provide rotational warping, and x0 and y0 provide location offset. "
+	},
+
+	"Mgraphics Translate": {
+		"prefix": ["matrix","translate","mgraphics.translate"],
+		"body": [
+			"mgraphics.translate(${1:TX}, ${2:TY});","${0}"
+		],
+		"description": "(void) Modifies the transform matrix by moving it by absolute (positive or negative) delta amounts. "
+	},
+
+	"Mgraphics Translate Source RGBA": {
+		"prefix": ["translate","source","rgba","mgraphics.translate","mgraphics.translate_source_rgba"],
+		"body": [
+			"mgraphics.translate_source_rgba(${1:T_RED}, ${2:T_GREEN}, ${3:T_BLUE}, ${4:T_ALPHA});","${0}"
+		],
+		"description": "(void) Create a transform for the color and alpha channels by absolute delta amounts to determine a color offset (either positive or negative). Note: One of the set_source_* routines must be called to apply this transform to an actual color. "
+	},
+
+	"Mgraphics User To Device": {
+		"prefix": ["user","device","location","mgraphics.user_to_device"],
+		"body": [
+			"mgraphics.user_to_device(${1:LOCATION});","${0}"
+		],
+		"description": "Given a user location (such as from get_current_point()), returns the device location. This helps find one’s position even with transform matrices in place. "
+	},
+
+	// "Mgraphics ": {
+	// 	"prefix": ["prefix"],
+	// 	"body": [
+	// 		"mgraphics."
+	// 	],
+	// 	"description": "Description"
+	// },
+
+
+	
+}
