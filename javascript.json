@@ -55,9 +55,6 @@
 		"description": "(void) If defined, will receive any resize events with the new width and height."
 	},
 
-	//
-	// MGRAPHICS
-	//
 	"MGRAPHICS setup": {
 		"prefix": ["jsui.mgraphics","setup","mgraphics.setup"],
 		"body": [
@@ -101,8 +98,6 @@
 		],
 		"description": "Sets autopaint mode."
 	},
-
-	///
 
 	"Mgrahics Append Path": {
 		"prefix": ["path","append_path","mgraphics.append_path"],
