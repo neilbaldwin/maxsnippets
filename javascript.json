@@ -155,10 +155,10 @@
 		"description": "(void) Given a device position, returns the user space location. This will determine a location despite user space deformation (using matrix transforms). "
 	},
 
-	"Mgraphics Elipse": {
-		"prefix": ["elipse","mgraphics.elipse"],
+	"Mgraphics Ellipse": {
+		"prefix": ["ellipse","mgraphics.ellipse"],
 		"body": [
-			"mgraphics.elipse(${1:X},${2:Y},${3:WIDTH},${4:HEIGHT});","${0}"
+			"mgraphics.ellipse(${1:X},${2:Y},${3:WIDTH},${4:HEIGHT});","${0}"
 		],
 		"description": "(void) Add a closed elliptical path in the context. "
 	},
@@ -187,8 +187,16 @@
 		"description": "(void)  Fill the path with the current source color, but do not destroy the path when the fill is completed. "
 	},
 
-	"Mgraphics Fill with Alpha": {
-		"prefix": ["fill_alpha","fill_with_alpha","mgraphics.fill_alpha","mgraphics.fill_with_alpha"],
+	"Mgraphics Fill Preserve With Alpha": {
+		"prefix": ["fill_preserve_alpha","preserve_alpha","mgraphics.fill_preserve_with_alpha"],
+		"body": [
+			"mgraphics.fill_preserve_with_alpha(${1:ALPHA});","${0}"
+		],
+		"description": "(void) Fill the path with the current source color, sets the alpha value for a fill-specific transparency and does not destroy the path."
+	},
+
+	"Mgraphics Fill With Alpha": {
+		"prefix": ["fill_alpha","fill_with_alpha","mgraphics.fill_with_alpha"],
 		"body": [
 			"mgraphics.fill_with_alpha(${1:ALPHA});","${0}"
 		],
@@ -542,9 +550,9 @@
 	},
 
 	"Mgraphics Stroke Preserve Alpha": {
-		"prefix": ["stroke","preserve","alpha","stroke_preserve","stroke_preserve_alpha","mgraphics.stroke_preserve_alpha"],
+		"prefix": ["stroke","preserve","alpha","stroke_preserve","stroke_preserve_with_alpha","mgraphics.stroke_preserve_with_alpha"],
 		"body": [
-			"mgraphics.stroke_preserve_alpha(${1:ALPHA});","${0}"
+			"mgraphics.stroke_preserve_with_alpha(${1:ALPHA});","${0}"
 		],
 		"description": "(void) This will draw the line, preserve the path, and override the alpha value in a single routine call. "
 	},
