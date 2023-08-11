@@ -1,8 +1,4 @@
 {
-	//
-	// JSUI
-	//
-
 	"JSUI Refresh": {
 		"prefix": ["jsui.refresh","refresh"],
 		"body": [
@@ -620,16 +616,5 @@
 			"mgraphics.user_to_device(${1:LOCATION});","${0}"
 		],
 		"description": "Given a user location (such as from get_current_point()), returns the device location. This helps find one’s position even with transform matrices in place. "
-	},
-
-	// "Mgraphics ": {
-	// 	"prefix": ["prefix"],
-	// 	"body": [
-	// 		"mgraphics."
-	// 	],
-	// 	"description": "Description"
-	// },
-
-
-	
+	}
 }
